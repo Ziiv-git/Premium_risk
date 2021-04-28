@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Salary Analysis</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="perc_premium_paid_by_cash_credit" placeholder="perc_premium_paid_by_cash_credit" required="required" />
+      <input type="text" name="age_in_days" placeholder="age_in_days" required="required" />
+		  <input type="text" name="Income" placeholder="Income" required="required" />
+      <input type="text" name="Count_3-6_months_late" placeholder="Count_3-6_months_late" required="required" />
+      <input type="text" name="Count_6-12_months_late" placeholder="Count_6-12_months_late" required="required" />
+      <input type="text" name="Count_more_than_12_months_late" placeholder="Count_more_than_12_months_late" required="required" />
+      <input type="text" name="application_underwriting_score" placeholder="application_underwriting_score" required="required" />
+      <input type="text" name="no_of_premiums_paid" placeholder="no_of_premiums_paid" required="required" />
+      <input type="text" name="sourcing_channel" placeholder="sourcing_channel" required="required" />
+      <input type="text" name="residence_area_type" placeholder="residence_area_type" required="required" />
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
